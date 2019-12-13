@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
-
-Public Class ClassCountCheckInToday
+'perbaiki ini
+Public Class ClassCheckInToday
     Public Property CHECKIN_COUNT As Integer
     Public Property CHECKOUT_COUNT As Integer
     Public Property TANPA_KET As Integer
@@ -35,17 +35,6 @@ Public Class ClassCountCheckInToday
                              If(IsDBNull(reader.Item("JUM_PEGAWAI")), Nothing, reader.Item("JUM_PEGAWAI"))))
             End While
         End If
-        Return products
-    End Function
-
-    Public Function GetCountCheckInToday() As IEnumerable(Of ClassCountCheckInToday)
-        Dim cn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("EABSEN_API.My.MySettings.ConnString").ConnectionString)
-        Dim cmd As New SqlCommand("SELECT SUM(CHECKIN_COUNT) CHECKIN_COUNT, SUM(CHECKOUT_COUNT) CHECKOUT_COUNT, SUM(TANPA_KET) TANPA_KET, SUM(SAKIT) SAKIT, SUM(DINAS) DINAS, SUM(CUTI_IJIN) CUTI_IJIN, SUM(JUM_PEGAWAI) JUM_PEGAWAI FROM [VW_REKAP_ABSEN_PERSKPD_PERHARI]", cn)
-        cmd.CommandType = CommandType.Text
-        cn.Open()
-        Dim reader As SqlDataReader = cmd.ExecuteReader()
-        Dim products As List(Of ClassCountCheckInToday) = ConvertReader(reader)
-        cn.Close()
         Return products
     End Function
 

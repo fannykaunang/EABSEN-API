@@ -102,19 +102,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AkumulasiKerjaController.vb" />
     <Compile Include="App_Start\JSConverter.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="ClassAkumulasiKerja.vb" />
+    <Compile Include="ClassCheckInToday.vb" />
     <Compile Include="ClassCountCheckInToday.vb" />
+    <Compile Include="ClassInsertCheckIn.vb" />
     <Compile Include="ClassPegawai.vb" />
     <Compile Include="ClassSKPD.vb" />
     <Compile Include="ClassPegawaiDetail.vb" />
+    <Compile Include="ClassPengguna.vb" />
     <Compile Include="CountCheckInTodayController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InsertCheckInController.vb" />
     <Compile Include="JSONConverter.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -137,6 +145,7 @@
     </Compile>
     <Compile Include="PegawaiController.vb" />
     <Compile Include="PegawaiDetailController.vb" />
+    <Compile Include="PenggunaController.vb" />
     <Compile Include="SKPDController.vb" />
     <Compile Include="ValuesController1.vb" />
   </ItemGroup>
@@ -154,6 +163,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="My Project\PublishProfiles\EABSEN-API - Web Deploy.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

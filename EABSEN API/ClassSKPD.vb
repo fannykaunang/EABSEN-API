@@ -49,7 +49,7 @@ Public Class ClassSKPD
 
     Public Function GetSKPD() As IEnumerable(Of ClassSKPD)
         Dim cn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("EABSEN_API.My.MySettings.ConnString").ConnectionString)
-        Dim cmd As New SqlCommand("SELECT * FROM VW_PEGAWAI", cn)
+        Dim cmd As New SqlCommand("SELECT TOP 100 * FROM VW_PEGAWAI", cn)
         cmd.CommandType = CommandType.Text
         cn.Open()
         Dim reader As SqlDataReader = cmd.ExecuteReader()
